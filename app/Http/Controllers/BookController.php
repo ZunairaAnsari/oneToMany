@@ -2,26 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Uzer;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // $posts = Post::with('uzer')->get();
-
-        //this query finds the data with condition
-        $posts = Post::withWhereHas('uzer', function($query) {
-            $query->where('name',"Fatima Zahra");
-        })->get();
-        return response()->json($posts);
+        $books = Book::get();
+        return $books;
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -41,7 +35,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Book $book)
     {
         //
     }
@@ -49,7 +43,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Book $book)
     {
         //
     }
@@ -57,7 +51,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Book $book)
     {
         //
     }
@@ -65,7 +59,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Book $book)
     {
         //
     }

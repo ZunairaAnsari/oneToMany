@@ -17,11 +17,11 @@ class UzerController extends Controller
         // return $user;
 
         // this method retrieve all the data with multiple tables
-        // $user = Uzer::with('post')->get();
+        $user = Uzer::with('posts')->get();
+        return response()->json($user);
 
         // this method retrieve the data which does not posted anything yet
-        $user = Uzer::doesntHave('post')->get();
-        return response()->json($user);
+        // $user = Uzer::doesntHave('post')->get();
     }
 
     /**

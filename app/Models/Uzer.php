@@ -16,7 +16,9 @@ class Uzer extends Model
 
     public $timestamps = false;
 
-    public function post(){
+    public function posts() 
+    {
         return $this->hasMany(Post::class);
     }
+
 }
